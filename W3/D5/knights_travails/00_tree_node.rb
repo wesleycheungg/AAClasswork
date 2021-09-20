@@ -3,10 +3,10 @@ require_relative 'queue.rb'
 
 class PolyTreeNode
 
-  attr_reader :value, :parent, :children
+  attr_reader :pos, :parent, :children
 
-  def initialize(value, parent = nil, children = [])
-    @value = value
+  def initialize(pos, parent = nil, children = [])
+    @pos = pos
     @parent = parent
     @children = children
   end
@@ -29,12 +29,12 @@ class PolyTreeNode
   end
 
   def inspect
-		"#<Node: @value=#{value}, @children=#{children}>"
+		"#<Node: @pos=#{pos}, @children=#{children}>"
 	end
 
   def dfs(val)
     # return nil if self.children.empty?
-		return self if self.value == val
+		return self if self.pos == val
 
     self.children.each do |child|
       # debugger
