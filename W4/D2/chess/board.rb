@@ -1,5 +1,6 @@
-require ("byebug")
-require_relative "./piece.rb"
+require "byebug"
+require_relative "piece.rb"
+
 class Board
   attr_accessor :rows
 
@@ -20,12 +21,12 @@ class Board
       if i == 0 || i == 1
         row.each_with_index do |col, j|
           curr_pos = [i,j]
-          @rows[i][j] = Piece.new(curr_pos, :W)
+          @rows[i][j] = Piece.new(curr_pos, :W, self)
         end
       elsif i == 6 || i == 7
         row.each_with_index do |col, j|
           curr_pos = [i,j]
-          @rows[i][j] = Piece.new(curr_pos, :B)
+          @rows[i][j] = Piece.new(curr_pos, :B, self)
         end
       end
     end
@@ -49,7 +50,7 @@ class Board
       raise "out of bounds man!"
     elsif self[start_pos]== nil
       raise "no piece at start position!"
-    elsif self[end_pos].color == self[start_pos].color
+    elsif self[end_pos] != nil && self[end_pos].color == self[start_pos].color
       raise "piece cannot move there same team!"
     end
 
@@ -61,10 +62,10 @@ class Board
 
 end
 # board = Board.new
-# # board.place_pieces
-# p board.render
+# board.place_pieces
+# board.render
 # board.move_piece([9,0] , [4,4])
-# p board.render
+# board.render
 # var = [0, 1]
 # p board[var]
 # var = [1, 2]
