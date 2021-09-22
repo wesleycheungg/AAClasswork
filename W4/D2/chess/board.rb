@@ -1,6 +1,7 @@
 require "byebug"
 require_relative "rook.rb"
 require_relative "knight.rb"
+require_relative "king.rb"
 
 class Board
   attr_accessor :rows
@@ -23,13 +24,13 @@ class Board
         row.each_with_index do |col, j|
           curr_pos = [i,j]
           # @rows[i][j] = Piece.new(curr_pos, :W, self)
-          @rows[i][j] = Knight.new(curr_pos, :W, self)
+          @rows[i][j] = King.new(curr_pos, :W, self)
         end
       elsif i == 6 || i == 7
         row.each_with_index do |col, j|
           curr_pos = [i,j]
           # @rows[i][j] = Piece.new(curr_pos, :B, self)
-          @rows[i][j] = Knight.new(curr_pos, :W, self)
+          @rows[i][j] = King.new(curr_pos, :B, self)
         end
       end
     end
