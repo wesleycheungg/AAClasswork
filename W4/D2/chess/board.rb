@@ -1,5 +1,6 @@
 require "byebug"
-require_relative "piece.rb"
+require_relative "rook.rb"
+require_relative "knight.rb"
 
 class Board
   attr_accessor :rows
@@ -21,12 +22,14 @@ class Board
       if i == 0 || i == 1
         row.each_with_index do |col, j|
           curr_pos = [i,j]
-          @rows[i][j] = Piece.new(curr_pos, :W, self)
+          # @rows[i][j] = Piece.new(curr_pos, :W, self)
+          @rows[i][j] = Knight.new(curr_pos, :W, self)
         end
       elsif i == 6 || i == 7
         row.each_with_index do |col, j|
           curr_pos = [i,j]
-          @rows[i][j] = Piece.new(curr_pos, :B, self)
+          # @rows[i][j] = Piece.new(curr_pos, :B, self)
+          @rows[i][j] = Knight.new(curr_pos, :W, self)
         end
       end
     end
@@ -61,9 +64,9 @@ class Board
   end
 
 end
-# board = Board.new
+board = Board.new
 # board.place_pieces
-# board.render
+board.render
 # board.move_piece([9,0] , [4,4])
 # board.render
 # var = [0, 1]

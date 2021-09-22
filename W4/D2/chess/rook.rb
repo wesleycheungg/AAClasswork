@@ -1,6 +1,8 @@
-require_relative "piece.rb"
+
+require_relative "piece"
 
 class Rook < Piece
+  include Slideable
 
   # attr_accessor :symbol
 

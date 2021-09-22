@@ -1,7 +1,6 @@
 require_relative "slideable.rb"
 
 class Piece
-include Slideable
 
   attr_accessor :curr_pos, :color, :board
   def initialize(curr_pos, color, board)
@@ -11,15 +10,29 @@ include Slideable
   end
 
   def to_s
-
+    # puts symbol
   end
 
   def empty?
     self.curr_pos.empty?
   end
 
-  def valid_moves
+  def valid_moves(arr)
+    result = []
+    arr.each do |ele|
+      if ele.any? {|ele| ele > 7 || ele < 0}
 
+      elsif board[ele] != nil && board[ele].color == self.color
+
+      else 
+        result << ele
+      end
+    end
+    result
+  end
+
+  def symbol
+    
   end
 
   private
