@@ -36,8 +36,9 @@ class Board
   end
 
   def [](pos)
-    row = pos[0]
-    col = pos[-1]
+    # row = pos[0]
+    # col = pos[-1]
+    row, col = pos
     return @rows[row][col]
   end
 
