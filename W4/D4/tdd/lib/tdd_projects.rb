@@ -27,5 +27,18 @@ def my_transpose(twoDarray)
     end
   end
   return new_arr
+end
 
+def stock_picker(prices)
+  result = []
+  diff = 0
+  prices.each_with_index do |price, i|
+    (i...prices.length).each do |j|
+      if prices[j] - prices[i] > diff
+        result = [i,j]
+        diff = prices[j] - prices[i]
+      end
+    end
+  end
+  result
 end

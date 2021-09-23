@@ -53,3 +53,17 @@ describe "#my_transpose" do
   end
 
 end
+
+describe "#stock_picker" do
+  it "input is empty" do
+    expect(stock_picker([])).to eq []
+  end
+
+  it "outputs the most profitable pair day" do
+    expect(stock_picker([1,2,3])).to eq [0,2]
+  end
+
+  it "multiple most profitable pairs, choose first" do
+    expect(stock_picker([1,2,3,3])).to eq [0,2]
+  end
+end
