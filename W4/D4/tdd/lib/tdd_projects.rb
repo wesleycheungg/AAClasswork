@@ -17,3 +17,15 @@ class Array
     pairs
   end
 end
+
+def my_transpose(twoDarray)
+  raise "ERROR! Not square." if twoDarray.length != twoDarray[0].length || !twoDarray.map(&:length).all? {twoDarray[0].length}
+  new_arr = Array.new(twoDarray.size) {Array.new(twoDarray.size)}
+  twoDarray.each_with_index do |row,i|
+    row.each_with_index do |ele, j|
+      new_arr[j][i] = ele
+    end
+  end
+  return new_arr
+
+end
