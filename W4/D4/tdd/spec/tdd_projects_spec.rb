@@ -13,8 +13,21 @@ end
 
 describe Array do
   describe "#two_sum" do
-    it "" do 
-      expect([-1, 0, 2, -2, 1].two_sum).to eq([[[0, 4], [2, 3]]])
+    it "find multiple pairs" do 
+      expect([-1, 0, 2, -2, 1].two_sum).to eq([[0, 4], [2, 3]])
+    end
+
+    it "find single pair" do
+      expect([1, 0, 2, -2, 1].two_sum).to eq([[2, 3]])
+    end
+
+    it "no pairs" do
+      expect([1, 0, 2, 2, 1].two_sum).to eq([])
+    end
+
+    it "raises error if pair order reversed" do
+      expect([-1, 0, 2, -2, 1].two_sum).not_to include([4,0])
+      expect([-1, 0, 2, -2, 1].two_sum).not_to include([3,2])
     end
   end 
 end
