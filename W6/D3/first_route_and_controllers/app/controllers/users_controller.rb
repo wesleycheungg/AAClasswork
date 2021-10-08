@@ -1,11 +1,11 @@
 class UsersController < ApplicationController #controllers are always plural; a controller manages requests that pertain to a collection of resources
 
-  def index
+  def index # index (GET/users)
     users = User.all
     render json: users
   end
 
-  def create
+  def create #post POST/users
     user = User.new(user_params)
     if user.save
       render json: user
@@ -14,12 +14,12 @@ class UsersController < ApplicationController #controllers are always plural; a 
   end
   end
 
-  def show
+  def show #GET/users/:id
     user = User.find(params[:id])
     render json: user
   end
 
-  def update
+  def update #PATCH/users/:id
     user = User.find(params[:id])
     if user.update(user_params)
         render json: user #updated user
@@ -28,14 +28,15 @@ class UsersController < ApplicationController #controllers are always plural; a 
     end
   end
 
-  def delete
+  def delete # destroy DELETE/users/:id
     user = User.find(params[:id])
     user.destroy
     render json:user
   end
 
+  private
   def user_params
-    params.require(:user).permit(:name,:email)
+    params.require(:user).permit(:username)
   end
 
 end
