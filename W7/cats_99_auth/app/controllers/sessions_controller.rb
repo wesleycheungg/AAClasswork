@@ -14,8 +14,12 @@ class SessionsController < ApplicationController
       redirect_to users_url
     else
       render json: ["Invalid Username or Password"]
-    end
+    end  
+  end
 
+  def destroy
+    logout
+    redirect_to new_session_url
   end
 
 end
