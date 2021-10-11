@@ -4,4 +4,18 @@ class SessionsController < ApplicationController
     render :new
   end
 
+  def create
+    @user = User.find_by_credentials(
+      params[:user][:user_name], 
+      params[:user][:password]
+    )
+    if @user
+      login(@user)
+      redirect_to users_url
+    else
+      render json: ["Invalid Username or Password"]
+    end
+
+  end
+
 end
