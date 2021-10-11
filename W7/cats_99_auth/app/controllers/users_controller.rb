@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
-    if user.save 
+    if user.save #no bang bc we want true or false then we handle ourselves
       login(user)
       redirect_to users_url(user)
     else
