@@ -6,6 +6,9 @@ class Clock {
         this.hours = dates.getHours();
         this.minutes = dates.getMinutes();
         this.seconds = dates.getSeconds();
+        // this.hours = 23;
+        // this.minutes = 59;
+        // this.seconds = 55;
         // 3. Call printTime.
         this.printTime();
         // 4. Schedule the tick at 1 second intervals.
@@ -24,9 +27,32 @@ class Clock {
         //     console.log(`${this.hours}:${this.minutes}:${this.seconds}`);
         // }, 1000);
         // 2. Call printTime.
+        this.tickSeconds();
+        this.tickMinutes();
+        if (this.hours === 24) {
+          this.hours = 0 
+        }
+
         this.printTime();
-  
     }
+
+    tickSeconds() {
+      if (this.seconds != 59) {
+        this.seconds++
+      } else if (this.seconds === 59) {
+        this.seconds = 0
+        this.minutes++
+      }
+    }
+
+    tickMinutes() {
+      if (this.minutes === 60) {
+        this.minutes = 0
+        this.hours++
+      }
+    }
+
+
 }
 
 const clock = new Clock();
