@@ -15,7 +15,7 @@
   \**********************/
 /***/ (() => {
 
-eval("console.log(\"Webpack is working!\")\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("console.log(\"Webpack is working!\");\r\n\r\n// const MovingObject = require(\"./moving_object.js\");\r\ndocument.addEventListener(\"DOMContentLoaded\", function(){\r\n  const canvas = document.getElementById('game-canvas');\r\n  const ctx = canvas.getContext('2d');\r\n  window.MovingObject = MovingObject;\r\n})\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
