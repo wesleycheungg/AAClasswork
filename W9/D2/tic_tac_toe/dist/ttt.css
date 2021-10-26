@@ -11,6 +11,7 @@ li {
     border: solid 1px black;
     padding: 30px;
     list-style-type: none;
+    background-color: grey;
 }
 
 li:hover {
