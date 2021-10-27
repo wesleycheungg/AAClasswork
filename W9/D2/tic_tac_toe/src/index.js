@@ -7,7 +7,7 @@ let newGame = new Game();
 document.addEventListener("DOMContentLoaded", () => {
   // Your code here
   const tView = document.querySelector(".ttt");
-  let view = new View(newGame, tView)
+  let view = new View(newGame, tView) 
 });
 
 
