@@ -15,9 +15,10 @@ class Tile extends React.Component {
       this.displayVal = (tile.adjacentBombCount() > 0 ? tile.adjacentBombCount() : "E")
     } else if (tile.flagged) {
       this.displayVal = "F"
-    } else if (tile.bombed) {
-      this.displayVal = "B"
     }
+    // } else if (tile.bombed) {
+    //   this.displayVal = "&#128163"
+    // }
     return this.displayVal
   }
 

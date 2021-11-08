@@ -31,20 +31,27 @@ class Game extends React.Component {
     render(){
       if (this.state.board.lost()) {
         return (
-            <div class="modal-fade">
-                <div class="pop-up-modal">
-                    <h1>Sad. You Lost :(.</h1>
-                    <button onClick={this.restartGame}>RESTART GAME</button>
+            <div>
+                <div class="modal-fade">
+                    <div class="pop-up-modal">
+                        <h1>Sad. You Lost :(.</h1>
+                        <button onClick={this.restartGame}>RESTART GAME</button>
+                    </div>
                 </div>
+                <Board className='board' board={this.state.board} updateParentGame={this.updateGame} />
+
             </div>
         )
       } else if (this.state.board.won()) {
         return (
-            <div class="modal-fade">
-                <div class="pop-up-modal">
-                    <h1>GG! YOU WON!</h1>
-                    <button onClick={this.restartGame}> RESTART GAME</button>
+            <div>
+                <div class="modal-fade">
+                    <div class="pop-up-modal">
+                        <h1>GG! YOU WON!</h1>
+                        <button onClick={this.restartGame}> RESTART GAME</button>
+                    </div>
                 </div>
+                <Board className='board' board={this.state.board} updateParentGame={this.updateGame} />
             </div>
         )
       } else {
