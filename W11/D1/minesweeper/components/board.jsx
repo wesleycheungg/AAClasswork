@@ -11,7 +11,7 @@ class Board extends React.Component {
       let board = this.props.board;
       let gridArr = board.grid.map((row, idx) => {
         return (
-          <div key={idx}>
+          <div key={idx} className='row'>
             {row.map((cell, idx) => {
               return (
                 <Tile key={idx} cell={cell} updateParentGame={this.props.updateParentGame} />

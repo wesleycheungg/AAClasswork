@@ -6,6 +6,7 @@ class Tile extends React.Component {
     super(props);
 
     this.displayVal = "T"
+    this.handleClick = this.handleClick.bind(this)
   }
 
   getDisplay(){
@@ -20,9 +21,14 @@ class Tile extends React.Component {
     return this.displayVal
   }
 
+  handleClick(e) {
+    let altHeld = e.altKey
+    this.props.updateParentGame(this, altHeld)
+  }
+
   render() {
     return (
-      <div>{this.getDisplay()}</div>
+      <div className='tile' onClick={this.handleClick}>{this.getDisplay()}</div>
     )
   }
 }

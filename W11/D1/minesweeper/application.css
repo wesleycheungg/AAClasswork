@@ -1,0 +1,23 @@
+.tile {
+  border-style: inset;
+  box-sizing: border-box;
+  border-style: outset;
+  border-width: 2px;
+  padding: 2px;
+  width:20px;
+  cursor: pointer;
+}
+
+.tile:hover {
+  background-color: lightgray;
+}
+
+.row {
+  display: flex
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

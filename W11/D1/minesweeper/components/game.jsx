@@ -17,7 +17,7 @@ class Game extends React.Component {
 
     render(){
         return(
-            <Board board={this.state.board} updateParentGame={this.updateGame} />
+            <Board className='board' board={this.state.board} updateParentGame={this.updateGame} />
         )
     }
 }
