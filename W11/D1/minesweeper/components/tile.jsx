@@ -5,20 +5,20 @@ class Tile extends React.Component {
   constructor(props) {
     super(props);
 
-    this.displayVal = "T"
+    this.displayVal = "🏝"
     this.handleClick = this.handleClick.bind(this)
   }
 
   getDisplay(){
     let tile = this.props.cell
     if(tile.explored){
-      this.displayVal = (tile.adjacentBombCount() > 0 ? tile.adjacentBombCount() : "E")
+      this.displayVal = (tile.adjacentBombCount() > 0 ? tile.adjacentBombCount() : "🧭")
     } else if (tile.flagged) {
-      this.displayVal = "F"
+      this.displayVal = "⛳️"
+    } else if (this.props.didLoseGame() && tile.bombed) {
+      this.displayVal = "💣"
+      console.log("last logic ran")
     }
-    // } else if (tile.bombed) {
-    //   this.displayVal = "&#128163"
-    // }
     return this.displayVal
   }
 

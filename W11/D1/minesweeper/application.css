@@ -4,8 +4,9 @@
   border-style: outset;
   border-width: 2px;
   padding: 2px;
-  width:20px;
+  width:30px;
   cursor: pointer;
+  text-align: center;
 }
 
 .tile:hover {

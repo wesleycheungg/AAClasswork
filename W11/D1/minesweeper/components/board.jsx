@@ -5,6 +5,8 @@ import Tile from "./tile";
 class Board extends React.Component {
     constructor(props){
         super(props);
+
+        this.didLose = this.didLose.bind(this)
     }
 
     getBoardRows() {
@@ -14,7 +16,7 @@ class Board extends React.Component {
           <div key={idx} className='row'>
             {row.map((cell, idx) => {
               return (
-                <Tile key={idx} cell={cell} updateParentGame={this.props.updateParentGame} />
+                <Tile key={idx} cell={cell} updateParentGame={this.props.updateParentGame} didLoseGame={this.didLose} />
               )
             })}
           </div>
@@ -22,6 +24,14 @@ class Board extends React.Component {
       })
       return gridArr;
     }
+
+    didLose(){
+        return(
+            this.props.board.lost()
+
+        )
+    }
+
 
     render(){
         return(
