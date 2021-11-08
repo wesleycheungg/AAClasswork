@@ -28,7 +28,6 @@ class Board extends React.Component {
           <div>
             {this.getBoardRows()}
           </div>
-            
         )
     }
 }

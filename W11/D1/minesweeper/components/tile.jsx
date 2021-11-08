@@ -23,7 +23,8 @@ class Tile extends React.Component {
 
   handleClick(e) {
     let altHeld = e.altKey
-    this.props.updateParentGame(this, altHeld)
+    let tile = this.props.cell
+    this.props.updateParentGame(tile, altHeld)
   }
 
   render() {
