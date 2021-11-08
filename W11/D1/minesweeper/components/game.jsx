@@ -8,6 +8,7 @@ class Game extends React.Component {
         let board = new Minesweeper.Board(9,6);
         this.state = {board}
         this.updateGame = this.updateGame.bind(this)
+        this.restartGame = this.restartGame.bind(this)
     }
 
     updateGame(tile, altPressed){
@@ -21,14 +22,30 @@ class Game extends React.Component {
       })
     }
 
+    restartGame(){
+        this.setState({
+            board: new Minesweeper.Board(9,6)
+        })
+    }
+
     render(){
       if (this.state.board.lost()) {
         return (
-          <div><h1>Sad. Game Over.</h1></div>
+            <div class="modal-fade">
+                <div class="pop-up-modal">
+                    <h1>Sad. You Lost :(.</h1>
+                    <button onClick={this.restartGame}>RESTART GAME</button>
+                </div>
+            </div>
         )
       } else if (this.state.board.won()) {
         return (
-          <div><h1>Congrats. You won.</h1></div>
+            <div class="modal-fade">
+                <div class="pop-up-modal">
+                    <h1>GG! YOU WON!</h1>
+                    <button onClick={this.restartGame}> RESTART GAME</button>
+                </div>
+            </div>
         )
       } else {
         return (

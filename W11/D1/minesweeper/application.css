@@ -21,3 +21,39 @@
   align-items: center;
   justify-content: center;
 }
+
+.modal-fade {
+    background: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* display: flex; */
+}
+
+.pop-up-modal {
+    top: 10%;
+    left: 20%;
+    right: 20%;
+    position: fixed;
+    background-color: black;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pop-up-modal h1{
+    color: white;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.is-hidden {
+    display: none;
+}
+
+
