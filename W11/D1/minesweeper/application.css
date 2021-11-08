@@ -1,5 +1,4 @@
 .tile {
-  border-style: inset;
   box-sizing: border-box;
   border-style: outset;
   border-width: 2px;
@@ -21,6 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .modal-fade {
@@ -34,7 +34,7 @@
 }
 
 .pop-up-modal {
-    top: 10%;
+    top: 50%;
     left: 20%;
     right: 20%;
     position: fixed;
@@ -57,4 +57,17 @@
     display: none;
 }
 
+.game h1 {
+  text-align: center;
+  margin: 10px;
+}
+
+.game {
+  font-family: Impact;
+}
+
+.explored {
+  border-style: inset;
+  background-color: black;
+}
 

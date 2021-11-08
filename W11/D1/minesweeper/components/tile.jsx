@@ -4,20 +4,21 @@ import * as Minesweeper from "../minesweeper";
 class Tile extends React.Component {
   constructor(props) {
     super(props);
-
+    this.style = ''
     this.displayVal = "🏝"
     this.handleClick = this.handleClick.bind(this)
   }
 
   getDisplay(){
     let tile = this.props.cell
-    if(tile.explored){
-      this.displayVal = (tile.adjacentBombCount() > 0 ? tile.adjacentBombCount() : "🧭")
-    } else if (tile.flagged) {
-      this.displayVal = "⛳️"
-    } else if (this.props.didLoseGame() && tile.bombed) {
+    if (this.props.didLoseGame() && tile.bombed) {
       this.displayVal = "💣"
       console.log("last logic ran")
+    } else if (tile.flagged) {
+      this.displayVal = "⛳️"
+    } else if (tile.explored) {
+      this.displayVal = (tile.adjacentBombCount() > 0 ? tile.adjacentBombCount() : "🧭")
+      this.style = 'explored'
     }
     return this.displayVal
   }
@@ -29,8 +30,9 @@ class Tile extends React.Component {
   }
 
   render() {
+    let style = `tile ${this.style}`
     return (
-      <div className='tile' onClick={this.handleClick}>{this.getDisplay()}</div>
+      <div className={style} onClick={this.handleClick}>{this.getDisplay()}</div>
     )
   }
 }
