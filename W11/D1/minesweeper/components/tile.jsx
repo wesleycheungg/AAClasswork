@@ -4,7 +4,6 @@ import * as Minesweeper from "../minesweeper";
 class Tile extends React.Component {
   constructor(props) {
     super(props);
-    this.style = ''
     this.displayVal = "🏝"
     this.handleClick = this.handleClick.bind(this)
   }
@@ -13,12 +12,10 @@ class Tile extends React.Component {
     let tile = this.props.cell
     if (this.props.didLoseGame() && tile.bombed) {
       this.displayVal = "💣"
-      console.log("last logic ran")
     } else if (tile.flagged) {
       this.displayVal = "⛳️"
     } else if (tile.explored) {
       this.displayVal = (tile.adjacentBombCount() > 0 ? tile.adjacentBombCount() : "🧭")
-      this.style = 'explored'
     }
     return this.displayVal
   }
@@ -27,10 +24,11 @@ class Tile extends React.Component {
     let altHeld = e.altKey
     let tile = this.props.cell
     this.props.updateParentGame(tile, altHeld)
+    this.getDisplay();
   }
 
   render() {
-    let style = `tile ${this.style}`
+    let style = this.props.cell.explored ? 'tile explored' : 'tile';
     return (
       <div className={style} onClick={this.handleClick}>{this.getDisplay()}</div>
     )

@@ -35,7 +35,7 @@ class Game extends React.Component {
               <h1>Bahama Minesweeper</h1>
               <div class="modal-fade">
                   <div class="pop-up-modal">
-                      <h1>Sad. You Lost :(.</h1>
+                      <h1>Sad. You Lost 😢</h1>
                       <button onClick={this.restartGame}>RESTART GAME</button>
                   </div>
               </div>
