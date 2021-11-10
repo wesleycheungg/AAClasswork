@@ -12,6 +12,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     receiveTodo: (todo) => {
       return dispatch(Util.receiveTodo(todo));
+    },
+    removeTodo: todo => {
+      return dispatch(Util.removeTodo(todo));
     }
   }
 }

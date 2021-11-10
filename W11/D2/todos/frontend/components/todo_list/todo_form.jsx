@@ -28,10 +28,6 @@ class TodoForm extends React.Component {
 
     }
 
-    handleClick(e){
-        e.preventDefault();
-    }
-    
     updateTitle(e){
         e.preventDefault();
         this.setState({
