@@ -20,7 +20,11 @@ const todosReducer = (state = initialState, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_TODOS:
-            return {...action.todos};
+            let newToDos = {};
+            for (let i = 0; i < action.todos.length; i++) {
+                newToDos[action.todos[i].id] = action.todos[i];
+            }
+            return newToDos;
         case RECEIVE_TODO:
             nextState[action.todo.id] = action.todo;
             return nextState;
