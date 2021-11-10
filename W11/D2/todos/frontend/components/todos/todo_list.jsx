@@ -1,6 +1,9 @@
 // export default Todo() => <h3>Todo List goes here!</h3>
 import React from "react";
 import TodoListItem from "./todo_list_item";
+import TodoForm from "../todo_list/todo_form";
+
+
 const TodoList = (props) => {
   return (
     <div>
@@ -12,6 +15,7 @@ const TodoList = (props) => {
           })
         }
       </ul>
+      <TodoForm receiveTodo={props.receiveTodo}/>
     </div>
   )
     
