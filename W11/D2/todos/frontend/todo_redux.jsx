@@ -10,4 +10,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.store = store;
     window.receiveTodos = Util.receiveTodos;
     window.receiveTodo = Util.receiveTodo;
+    window.removeToDo = Util.removeToDo;
 })
