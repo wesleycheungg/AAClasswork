@@ -3,18 +3,12 @@ import { RECEIVE_TODO } from "../actions/todo_actions";
 
 
 const initialState = {
-    1: {
-      id: 1,
-      title: "wash car",
-      body: "with soap",
-      done: false
-    },
-    2: {
-      id: 2,
-      title: "wash dog",
-      body: "with shampoo",
-      done: true
-    }
+        1: {
+            id: 1,
+            title: 'take a shower',
+            body: 'and be clean',
+            done: false
+        }
   };
 const todosReducer = (state = initialState, action) => {
     Object.freeze(state);
