@@ -5,7 +5,7 @@ import Util from "./actions/todo_actions"
 import { receiveSteps, receiveStep, removeStep} from "./actions/step_actions"
 import Root from "./components/root"
 import { allToDos } from "./reducers/selectors"
-import {fetchTodos} from "./util/todo_api_util"
+import {fetchTodos} from "./actions/todo_actions"
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.getElementById("root");
