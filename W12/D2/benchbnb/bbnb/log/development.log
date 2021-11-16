@@ -1,0 +1,11 @@
+  [1m[35m (732.1ms)[0m  [1m[35mCREATE DATABASE "bbnb_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (385.7ms)[0m  [1m[35mCREATE DATABASE "bbnb_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-11-16 13:52:13 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 2481ms (Views: 2461.8ms | ActiveRecord: 0.0ms)
+
+
