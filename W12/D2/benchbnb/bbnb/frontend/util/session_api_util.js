@@ -1,8 +1,8 @@
-export const Signup = formUser => (
+export const Signup = user => (
     $.ajax({
         method: 'POST',
         url: '/api/users',
-        formUser
+        user
     })
 )
 
