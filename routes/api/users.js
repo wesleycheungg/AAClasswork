@@ -64,10 +64,10 @@ router.post('/login', (req, res) => {
     if(!isValid) {
         return res.status(400).json(errors);
     }
-    const handle = req.body.handle;
+    const email = req.body.email;
     const password = req.body.password
 
-    User.findOne({ handle })
+    User.findOne({ email })
         .then(user => {
             if(!user) {
                 errors.handle = "This user does not exist";
@@ -79,7 +79,7 @@ router.post('/login', (req, res) => {
                     if(isMatch){
                         const payload = {
                             id: user.id,
-                            handle: user.handle,
+                            email: user.email,
                         }
                         jwt.sign(
                             payload,
